@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Editor</string>
+    <string name="drawingAnnouncement">You are drawing on the screen.</string>
+    <string name="canvasContentDescription">Mini Paint is a simple line drawing app.
+        Drag your fingers to draw. Rotate the phone to clear.</string>
+    <string name="todo">TODO</string>
+    <string name="change_colo">Change Colour</string>
+</resources>
