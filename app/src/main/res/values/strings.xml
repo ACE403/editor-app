@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Editor</string>
     <string name="drawingAnnouncement">You are drawing on the screen.</string>
@@ -5,4 +6,16 @@
         Drag your fingers to draw. Rotate the phone to clear.</string>
     <string name="todo">TODO</string>
     <string name="change_colo">Change Colour</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="textview">TextView</string>
+    <string name="colors">colors</string>
+
+    <string-array name="feelings">
+        <item>Sad</item>
+        <item>Dissatisfied</item>
+        <item>Satisfied</item>
+        <item>Happy</item>
+        <item>Excited</item>
+    </string-array>
 </resources>

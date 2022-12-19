@@ -14,4 +14,13 @@
     <color name="blue">#1F51FF</color>
     <color name="green">#00FF00</color>
     <color name="yellow">#FFFF00</color>
+    <color name="pastel_orange_light">#FBE8DF</color>
+
+    <array name="rainbow">
+        <item>@color/red</item>
+        <item>@color/yellow</item>
+        <item>@color/green</item>
+        <item>@color/blue</item>
+    </array>
+
 </resources>

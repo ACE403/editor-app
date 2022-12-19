@@ -20,8 +20,41 @@
         <include
             layout="@layout/paint_view"
             android:layout_width="match_parent"
-            android:layout_height="678dp" />
+            android:layout_height="678dp"
+            />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/typesFilterContainer" style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="wrap_content"
 
+            android:layout_height="40dp"
+            android:background="@drawable/filter_spinner_dropdown_bg"
+            app:boxBackgroundColor="@color/pastel_orange_light"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:endIconDrawable="@drawable/ic_arrow_down"
+            app:endIconTint="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:dropDownSelector="@drawable/filter_spinner_dropdown_bg"
+                android:ellipsize="end"
+                android:inputType="none"
+                android:maxLines="1"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:singleLine="true"
+                android:text="@string/colors"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+               />
+        </com.google.android.material.textfield.TextInputLayout>
 
     </FrameLayout>
 
@@ -112,10 +145,11 @@
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/eraser_background"
-            android:contentDescription="TODO"
+
             android:src="@drawable/eraser_new">
 
         </ImageButton>
+
     </LinearLayout>
 
     <LinearLayout
