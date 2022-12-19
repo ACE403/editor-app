@@ -1,24 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/black">
+
+    <FrameLayout
+        android:id="@+id/fl_drawing_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="660dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_action_buttons">
+
+        <include
+            layout="@layout/paint_view"
+            android:layout_width="match_parent"
+            android:layout_height="678dp" />
+
+
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp"
         android:background="@drawable/toolbar_background"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+       app:layout_constraintBottom_toTopOf="@id/ll_action_buttons"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageButton
             android:id="@+id/pen"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_margin="5dp"
             android:background="@drawable/draw_background"
             android:contentDescription="@string/todo"
@@ -29,8 +53,8 @@
 
         <ImageButton
             android:id="@+id/red_color"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
@@ -42,8 +66,8 @@
 
         <ImageButton
             android:id="@+id/green_color"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
@@ -52,10 +76,11 @@
             android:contentDescription="@string/todo">
 
         </ImageButton>
+
         <ImageButton
             android:id="@+id/blue_color"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
@@ -64,10 +89,11 @@
             android:contentDescription="@string/todo">
 
         </ImageButton>
+
         <ImageButton
             android:id="@+id/yellow_color"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
@@ -76,10 +102,11 @@
             android:contentDescription="@string/todo">
 
         </ImageButton>
+
         <ImageButton
             android:id="@+id/eraser"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
@@ -90,14 +117,66 @@
 
         </ImageButton>
     </LinearLayout>
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_above="@+id/toolbar"
-    android:background="@color/white">
 
-    <include layout="@layout/paint_view" />
+    <LinearLayout
+        android:id="@+id/ll_action_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/toolbar_background"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/fl_drawing_view_container"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
-</RelativeLayout>
+        <ImageButton
+            android:id="@android:id/undo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/eraser_background"
+            android:src="@drawable/undo"
+            tools:targetApi="m">
+            <!--            app:layout_constraintBottom_toTopOf="@+id/fl_drawing_view_container"-->
+            <!--            app:layout_constraintEnd_toEndOf="parent"-->
+            <!--            app:layout_constraintStart_toStartOf="parent"-->
+            <!--            app:layout_constraintTop_toBottomOf="@+id/toolbar">-->
 
-</RelativeLayout>
+        </ImageButton>
+
+        <ImageButton
+            android:id="@android:id/redo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/eraser_background"
+            android:src="@drawable/redo"
+            tools:targetApi="m">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/link"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+
+            android:background="@drawable/eraser_background"
+            android:src="@drawable/link">
+
+        </ImageButton>
+        <ImageButton
+            android:id="@+id/save"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/eraser_background"
+            android:src="@drawable/save">
+             </ImageButton>
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
